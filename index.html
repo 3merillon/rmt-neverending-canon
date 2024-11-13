@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>[RMT] Bach's Neverending Canon</title>
+    <script src="bigfraction.js"></script>
+    <script src="note.js"></script>
+    <script src="module.js"></script>
+    <script defer src="https://unpkg.com/tapspace@2.0.0-alpha.20/dist/tapspace.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="player.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="controls-group">
+            <button id="playPauseBtn">
+                <div class="pp">
+                    <span></span>
+                </div>
+            </button>
+
+            <button id="stopButton" class="stop-button">
+                <div class="stop">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+        </div>
+
+        <div class="right-controls">
+            <div class="tracking-zone">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="trackingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            
+            <div class="menu-container">
+                <button class="dropdown-button">
+                    <div class="plusminus"></div>
+                </button>
+                <div id="general-widget" class="widget">
+                    <div class="slider-container tempo-container">
+                        <div class="tempo-input-group">
+                            <label>tempo [BPM]:</label>
+                            <div class="input-button-group">
+                                <input type="number" id="tempo-input" min="3" max="999" step="1">
+                                <button id="tempo-submit">Set</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-container frequency-container">
+                        <div class="frequency-input-group">
+                            <label>base frequency [Hz]:</label>
+                            <div class="input-button-group">
+                                <input type="number" id="frequency-input" min="20" max="2000" step="1">
+                                <button id="frequency-submit">Set</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-footer">
+                        <div class="info-section">
+                            <a href="https://cybercyril.com" target="_blank" class="info-link">- discover "<b>Relative Music Theory</b>" -</a>
+                        </div>
+                        <div class="support-section">
+                            <a href="https://donate.stripe.com/7sIdR3dQMciZb1m8ww" target="_blank" class="donate-button">Donate</a>
+                        </div>
+                        <div class="widget-copyright">
+                            © 2024 Cyril Monkewitz
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="measureBarsContainer" class="measure-bars-container"></div>
+    <div id="playheadContainer" class="measure-bars-container"></div>
+    <div class="myspaceapp"></div>
+</body>
+</html>
